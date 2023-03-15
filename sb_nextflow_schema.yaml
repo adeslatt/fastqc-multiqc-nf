@@ -47,7 +47,7 @@ inputs:
     inputBinding:
         prefix: --reads
     label: Select your reads for input
-    type: File
+    type: File[]
 -   id: outdir
     inputBinding:
         prefix: --outdir
@@ -62,5 +62,5 @@ requirements:
 -   class: InlineJavascriptRequirement
 -   class: InitialWorkDirRequirement
     listing:
-    - $(inputs.input)
-    - $(inputs.output)
+    - $(inputs.reads)
+    - $(inputs.outdir)
